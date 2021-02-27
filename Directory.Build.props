@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup>
+        <LangVersion>preview</LangVersion>
+        <Nullable>enable</Nullable>
+        <NullableContextOptions>$(Nullable)</NullableContextOptions>
+        <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+        <Version>0.0.1</Version>
+    </PropertyGroup>
+</Project>
