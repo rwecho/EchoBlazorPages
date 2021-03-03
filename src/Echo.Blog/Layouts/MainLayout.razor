@@ -1,33 +1,53 @@
 @inherits LayoutComponentBase
 
-<Container >
- <Bar Breakpoint="Breakpoint.Desktop"
-            Background="Background.Light"
-            ThemeContrast="ThemeContrast.Light"
-            Class="row">
-            <BarBrand>
-                <Link To="/" Class="text-decoration-none text-primary">
+<div>
+    <Container Fluid="true" Class="bg-light">
+        <Container>
+            <Bar Breakpoint="Breakpoint.Desktop" Background="Background.Light" ThemeContrast="ThemeContrast.Light"
+                Class="row" Style="padding: .5rem 0">
+                <BarBrand>
+                    <Link To="/" Class="text-decoration-none text-primary">
                     ECHO'S BLOG
-                </Link>
-            </BarBrand>
-            <BarToggler />
-            <BarMenu Margin="new FluentMargin()">
-                <BarStart>
-                    <BarItem>
-                        <BarLink To="/home">Home</BarLink>
-                    </BarItem>
-                    <BarItem>
-                        <BarLink To="/articles">Articles</BarLink>
-                    </BarItem>
-                </BarStart>
-                <BarEnd>
-                    <BarItem>
-                        <BarLink To="/about">About me</BarLink>
-                    </BarItem>
-                </BarEnd>
-            </BarMenu>
-        </Bar>
-    <div class="row">
-        @Body
-    </div>
-</Container>
+                    </Link>
+                </BarBrand>
+                <BarToggler />
+                <BarMenu Margin="new FluentMargin()">
+                    <BarStart Class="ml-4">
+                        <BarItem>
+                            <BarLink To="/home">首页</BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarLink To="/articles">日记</BarLink>
+                        </BarItem>
+                        <BarItem>
+                            <BarLink To="/about">关于我</BarLink>
+                        </BarItem>
+                    </BarStart>
+                    <BarEnd>
+                        <BarItem>
+                            <Form>
+                                <div class="row">
+                                    <div>
+                                        <TextEdit Placeholder="搜索" />
+                                    </div>
+                                    <div>
+                                        <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true">
+                                            <Icon Name="IconName.Search" />
+                                        </Button>
+                                    </div>
+                                </div>
+                            </Form>
+                        </BarItem>
+                    </BarEnd>
+                </BarMenu>
+            </Bar>
+
+        </Container>
+    </Container>
+
+    <Container>
+        <div class="row my-5">
+            @Body
+        </div>
+    </Container>
+</div>
