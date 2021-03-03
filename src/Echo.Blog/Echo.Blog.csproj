@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
 
@@ -10,11 +10,28 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.3" />
+        <PackageReference Include="Bogus" Version="33.0.1" />
+        <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
+        <PackageReference Include="Blazor-State" Version="3.4.4" />
+        <PackageReference Include="BlazorDateRangePicker" Version="3.5.0" />
+        
+        <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3-rc3" />
+        <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3-rc3" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0-preview.1.21103.6" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="wwwroot" />
     </ItemGroup>
+
+
+    <PropertyGroup>
+        <BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- extends watching group to include *.razor files -->
+        <Watch Include="**\*.razor" />
+    </ItemGroup>
+
 
 </Project>
