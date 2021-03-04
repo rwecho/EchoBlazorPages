@@ -14,10 +14,12 @@
         <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
         <PackageReference Include="Blazor-State" Version="3.4.4" />
         <PackageReference Include="BlazorDateRangePicker" Version="3.5.0" />
-        
+
         <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3-rc3" />
         <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3-rc3" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0-preview.1.21103.6" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0-preview.1.21102.12" />
+
     </ItemGroup>
 
     <ItemGroup>
@@ -32,11 +34,5 @@
         <!-- extends watching group to include *.razor files -->
         <Watch Include="**\*.razor" />
     </ItemGroup>
-    <ItemGroup>
-      <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-        <HintPath>C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\6.0.0-preview.1.21103.6\ref\net6.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-
+   
 </Project>
