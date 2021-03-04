@@ -18,6 +18,8 @@ namespace Echo.Blog.Server
 
         public IConfiguration Configuration { get; }
 
+        private AppBootstrap AppBootstrap { get; } = new AppBootstrap();
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -32,6 +34,8 @@ namespace Echo.Blog.Server
                 } )
                 .AddBootstrapProviders()
                 .AddFontAwesomeIcons();
+
+            this.AppBootstrap.Configure(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

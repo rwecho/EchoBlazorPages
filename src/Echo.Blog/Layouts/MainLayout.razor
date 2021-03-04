@@ -2,37 +2,38 @@
 
 <div>
     <Container Fluid="true" Class="bg-light">
+            <PageProgress Visible="@LayoutManager.PageLoading" Color="Color.Primary"/>
         <Container>
             <Bar Breakpoint="Breakpoint.Desktop" Background="Background.Light" ThemeContrast="ThemeContrast.Light"
-                Class="row" Style="padding: .5rem 0">
+                 Class="row" Style="padding: .5rem 0">
                 <BarBrand>
                     <Link To="/" Class="text-decoration-none text-primary">
-                    ECHO'S BLOG
+                        Home
                     </Link>
                 </BarBrand>
-                <BarToggler />
+                <BarToggler/>
                 <BarMenu Margin="new FluentMargin()">
                     <BarStart Class="ml-4">
                         <BarItem>
                             <BarLink To="/home">首页</BarLink>
                         </BarItem>
-                        <BarItem>
+                         <BarItem>
                             <BarLink To="/articles">日记</BarLink>
-                        </BarItem>
-                        <BarItem>
+                            </BarItem>
+                            <BarItem>
                             <BarLink To="/about">关于我</BarLink>
-                        </BarItem>
+                            </BarItem>
                     </BarStart>
                     <BarEnd>
                         <BarItem>
                             <Form>
                                 <div class="row">
                                     <div>
-                                        <TextEdit Placeholder="搜索" />
+                                        <TextEdit Placeholder="搜索"/>
                                     </div>
                                     <div>
                                         <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true">
-                                            <Icon Name="IconName.Search" />
+                                            <Icon Name="IconName.Search"/>
                                         </Button>
                                     </div>
                                 </div>
@@ -46,8 +47,10 @@
     </Container>
 
     <Container>
-        <div class="row my-5">
+        <div class="row my-3">
             @Body
         </div>
+
+
     </Container>
 </div>

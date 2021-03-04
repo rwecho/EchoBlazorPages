@@ -19,10 +19,12 @@ namespace Echo.Blog.Wasm
                 .AddBlazorise( options =>
                 {
                     options.ChangeTextOnKeyPress = true;
-                } )
+                })
                 .AddBootstrapProviders()
                 .AddFontAwesomeIcons();
 
+            var appBootstrap = new AppBootstrap();
+            appBootstrap.Configure(builder.Services);
             builder.RootComponents.Add<App>("#app");
             builder.Services.AddScoped(
                 sp => new HttpClient {BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)});

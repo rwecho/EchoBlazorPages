@@ -1,12 +1,24 @@
 @page "/about"
 
-<Card>
-    <CardBody>
-        <CardTitle Size="5">Card title</CardTitle>
-        <CardText>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-        </CardText>
-        <Button Color="Color.Primary">Button</Button>
-    </CardBody>
-
-</Card>
+@if (this.Author == null)
+{
+    this.LayoutManager.ShowPageLoading();
+}
+else
+{
+    this.LayoutManager.HidePageLoading();
+    <Card>
+        <CardBody>
+            <CardTitle Size="5">关于我</CardTitle>
+            <div>
+                <Figure  Class="mx-auto d-block" style="width: 128px">
+                    <FigureImage Source="@Author.Avatar" AlternateText="Avatar"/>
+                    <FigureCaption>@this.Author.FullName</FigureCaption>
+                </Figure>
+            </div>
+            <CardText>
+                @this.Author.Introduction
+            </CardText>
+        </CardBody>
+    </Card>
+}

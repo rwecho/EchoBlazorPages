@@ -2,6 +2,13 @@
 @page "/"
 <h3>Home</h3>
 
-@code {
-
+@if (string.IsNullOrEmpty(this.Message))
+{
+    <div>loading...</div>
+}
+else
+{
+    <div>
+        @this.Message
+    </div>
 }

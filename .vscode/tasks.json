@@ -21,7 +21,7 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch",
+            "label": "watch server",
             "command": "dotnet",
             "type": "shell",
             "args": [
@@ -29,6 +29,23 @@
                 "run",
                 "--project",
                 "./src/Echo.Blog.Server/Echo.Blog.Server.csproj",
+                "debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch wasm",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "./src/Echo.Blog.Wasm/Echo.Blog.Wasm.csproj",
                 "debug"
             ],
             "group": "build",
