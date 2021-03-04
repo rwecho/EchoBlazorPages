@@ -34,5 +34,8 @@
         <!-- extends watching group to include *.razor files -->
         <Watch Include="**\*.razor" />
     </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Features\Aticles\Articles.razor" />
+    </ItemGroup>
    
 </Project>

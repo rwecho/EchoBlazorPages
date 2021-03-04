@@ -1,14 +1,24 @@
 @page "/Home"
 @page "/"
-<h3>Home</h3>
 
-@if (string.IsNullOrEmpty(this.Message))
+@if (this.Articles == null)
 {
-    <div>loading...</div>
+    this.LayoutManager.ShowPageLoading();
 }
 else
 {
-    <div>
-        @this.Message
-    </div>
+    this.LayoutManager.HidePageLoading();
+
+    foreach (var article in this.Articles)
+    {
+        <Card>
+            <CardBody>
+                <CardTitle Size="5">@article.Title</CardTitle>
+                <CardText>
+                    @article.Content.Substring(0,100)
+                </CardText>
+            </CardBody>
+        </Card>
+    }
+
 }
