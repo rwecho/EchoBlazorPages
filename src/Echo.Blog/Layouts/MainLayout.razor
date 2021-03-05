@@ -5,7 +5,8 @@
             <PageProgress Visible="@LayoutManager.PageLoading" Color="Color.Primary"/>
         <Container>
             <Bar Breakpoint="Breakpoint.Desktop"
-                 Background="Background.Dark" ThemeContrast="ThemeContrast.Dark"
+                 Background="Background.Dark"
+                 ThemeContrast="ThemeContrast.Dark"
                  Class="row" Style="padding: .5rem 0">
                 <BarBrand>
                     <Link To="/" Class="text-decoration-none text-primary">
@@ -14,7 +15,7 @@
                 </BarBrand>
                 <BarToggler/>
                 <BarMenu>
-                    <BarStart Class="ml-4">
+                    <BarStart Class="ml-md-4">
                         <BarItem>
                             <BarLink To="/home">首页</BarLink>
                         </BarItem>
@@ -28,7 +29,7 @@
                     <BarEnd>
                         <BarItem>
                             <Form>
-                                <div class="row">
+                                <div class="d-inline-flex">
                                     <div>
                                         <TextEdit Placeholder="搜索"/>
                                     </div>

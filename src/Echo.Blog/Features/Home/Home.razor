@@ -8,17 +8,50 @@
 else
 {
     this.LayoutManager.HidePageLoading();
-
-    foreach (var article in this.Articles)
-    {
-        <Card>
+    <div class="container col-md-8 col-lg-9">
+        <div class="row">
+            <Card Class="w-100">
+                <CardBody>
+                    @foreach (var article in this.Articles)
+                    {
+                        <article class="my-2">
+                            <CardTitle Size="5">@article.Title</CardTitle>
+                            <CardText>
+                                @article.Content.Substring(0, 100)
+                            </CardText>
+                        </article>
+                        <div class="d-flex">
+                            <div class="d-inline-flex">
+                                <div class="mr-2">创建时间： </div>
+                                <div>@article.CreationTime.ToString("d")</div>
+                            </div>
+                            <div class="d-inline-flex ml-4">
+                                @if (article.Tags != null)
+                                {
+                                    <div>标签：</div>
+                                    @foreach (var tag in article.Tags)
+                                    {
+                                        <div class="badge badge-pill ml-2">@tag</div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <Divider DividerType="DividerType.Dotted"></Divider>
+                    }
+                </CardBody >
+            </Card >
+        </div>
+    </div>
+    <div class="container d-none d-md-block  col-md-4 col-lg-3 ">
+        <Card Class="row ml-md-2">
             <CardBody>
-                <CardTitle Size="5">@article.Title</CardTitle>
+                <CardTitle Size="5">Hello world</CardTitle>
                 <CardText>
-                    @article.Content.Substring(0,100)
+
                 </CardText>
             </CardBody>
         </Card>
-    }
-
+    </div>
 }
+
+
